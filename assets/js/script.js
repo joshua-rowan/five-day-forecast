@@ -11,7 +11,11 @@ function getCoordinates(cityName){
       })
       .then(function (data) {
         console.log(data);
+        var cityLat = data[0].lat;
+        var cityLon = data[0].lon;
+        console.log(cityLat, cityLon);
       });
+      
 }
 
 //above currently gets 'object' with many keys including 'lat' and 'lon'
