@@ -33,9 +33,10 @@ function weatherToday(weatherCall) {
   //add weatherBody style here
   weatherCard.append(weatherBody);
 
+
   var titleEl = document.createElement("h3");
-  //below works except the icon does not work
-  titleEl.innerHTML = weatherCall.city.name + " (" + weatherCall.list[0].dt_txt + ")" + weatherCall.list[0].weather[0].icon;
+  var date = dayjs(weatherCall.list[0].dt_txt).format("MM/DD/YYYY");
+  titleEl.innerHTML = weatherCall.city.name + " (" + date + ")" + weatherCall.list[0].weather[0].icon;
 
   var weatherContentEl = document.createElement("p");
   weatherContentEl.innerHTML = "Temp: " + weatherCall.list[0].main.temp + " F" + "<br/>";
@@ -53,7 +54,7 @@ function displayForecast(forecastCall) {
 }
 
 function getForecast(lat, lon) {
-  var fiveDayForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+  var fiveDayForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey;
   fetch(fiveDayForecastUrl)
   .then(function (response) {
     return response.json();
@@ -69,3 +70,4 @@ searchBtn.addEventListener("click", function(){
     getCoordinates(city);
 });
 
+//var date = dayjs(weatherData.gt_txt)format(MM/DD/YYYY)
