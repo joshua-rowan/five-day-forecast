@@ -1,6 +1,8 @@
-var APIKey = "667c2def329f02a09cd4ba7bed05e4c6"
+var APIKey = "667c2def329f02a09cd4ba7bed05e4c6";
 var citySearch = document.getElementById("city");
-var searchBtn = document.getElementById("search-btn")
+var searchBtn = document.getElementById("search-btn");
+var currentWeatherEl = document.getElementById("current-weather");
+var fiveDayEl = document.getElementById("5-day-fore");
 
 //API 1 call to convert city name into coordinates
 function getCoordinates(cityName){
@@ -20,6 +22,11 @@ function getCoordinates(cityName){
       });
 }
 
+function weatherToday(weatherCall) {
+  console.log(weatherCall);
+  console.log(weatherCall.list[0].weather[0].main);
+}
+
 function getForecast(lat, lon) {
   var fiveDayForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
   console.log(fiveDayForecastUrl);
@@ -28,7 +35,8 @@ function getForecast(lat, lon) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
+    weatherToday(data);
+    //console.log(data.list[0].weather[0].main);
   })
 }
 
