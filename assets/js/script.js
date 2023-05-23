@@ -34,9 +34,13 @@ function weatherToday(weatherCall) {
   weatherCard.append(weatherBody);
 
   var titleEl = document.createElement("h3");
-  titleEl.textContent = weatherCall.city.name + " (" + weatherCall.list[0].dt_txt + ")";
+  //below works except the icon does not work
+  titleEl.innerHTML = weatherCall.city.name + " (" + weatherCall.list[0].dt_txt + ")" + weatherCall.list[0].weather[0].icon;
 
-  weatherBody.append(titleEl);
+  var weatherContentEl = document.createElement("p");
+  weatherContentEl.textContent = "Temp: " + weatherCall.list[0].main.temp + " F"
+
+  weatherBody.append(titleEl, weatherContentEl);
   currentWeatherEl.append(weatherCard);
 }
 
