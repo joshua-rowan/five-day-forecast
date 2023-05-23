@@ -27,6 +27,17 @@ function weatherToday(weatherCall) {
   console.log(weatherCall.list[0].main.temp);
   console.log(weatherCall.list[0].wind.speed);
   console.log(weatherCall.list[0].main.humidity);
+  var weatherCard = document.createElement("div");
+  //add class here to weatherCard for border and size
+  var weatherBody = document.createElement("div");
+  //add weatherBody style here
+  weatherCard.append(weatherBody);
+
+  var titleEl = document.createElement("h3");
+  titleEl.textContent = weatherCall.city.name + " (" + weatherCall.list[0].dt_txt + ")";
+
+  weatherBody.append(titleEl);
+  currentWeatherEl.append(weatherCard);
 }
 
 function getForecast(lat, lon) {
