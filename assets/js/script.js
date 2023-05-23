@@ -38,10 +38,18 @@ function weatherToday(weatherCall) {
   titleEl.innerHTML = weatherCall.city.name + " (" + weatherCall.list[0].dt_txt + ")" + weatherCall.list[0].weather[0].icon;
 
   var weatherContentEl = document.createElement("p");
-  weatherContentEl.textContent = "Temp: " + weatherCall.list[0].main.temp + " F"
+  weatherContentEl.innerHTML = "Temp: " + weatherCall.list[0].main.temp + " F" + "<br/>";
+
+  weatherContentEl.innerHTML += "Wind: " + weatherCall.list[0].wind.speed + " mph" + "<br/>";
+
+  weatherContentEl.innerHTML += "Humidity: " + weatherCall.list[0].main.humidity + " %" + "<br/>";
 
   weatherBody.append(titleEl, weatherContentEl);
   currentWeatherEl.append(weatherCard);
+}
+
+function displayForecast(forecastCall) {
+  
 }
 
 function getForecast(lat, lon) {
@@ -52,6 +60,7 @@ function getForecast(lat, lon) {
   })
   .then(function (data) {
     weatherToday(data);
+    displayForecast(data);
   })
 }
 
