@@ -1,3 +1,5 @@
+//TA Andrew Truong helped me and several classmates implementing dayjs to format dates
+
 var APIKey = "667c2def329f02a09cd4ba7bed05e4c6";
 var citySearch = document.getElementById("city");
 var searchBtn = document.getElementById("search-btn");
@@ -20,13 +22,6 @@ function getCoordinates(cityName){
 }
 
 function weatherToday(weatherCall) {
-  console.log(weatherCall);
-  console.log(weatherCall.city.name);
-  console.log(weatherCall.list[0].dt_txt);
-  console.log(weatherCall.list[0].weather[0].icon);
-  console.log(weatherCall.list[0].main.temp);
-  console.log(weatherCall.list[0].wind.speed);
-  console.log(weatherCall.list[0].main.humidity);
   var weatherCard = document.createElement("div");
   //add class here to weatherCard for border and size
   var weatherBody = document.createElement("div");
@@ -34,7 +29,7 @@ function weatherToday(weatherCall) {
   weatherCard.append(weatherBody);
 
 
-  var titleEl = document.createElement("h3");
+  var titleEl = document.createElement("h2");
   var date = dayjs(weatherCall.list[0].dt_txt).format("MM/DD/YYYY");
   titleEl.innerHTML = weatherCall.city.name + " (" + date + ")" + weatherCall.list[0].weather[0].icon;
 
@@ -50,7 +45,16 @@ function weatherToday(weatherCall) {
 }
 
 function displayForecast(forecastCall) {
+  console.log(forecastCall);
+  var forecastContainer = document.createElement("div");
+
+  var forecastHeaderEl = document.createElement("h3");
+  forecastHeaderEl.textContent = "5-Day Forecast:";
+
   
+
+  forecastContainer.append(forecastHeaderEl);
+  fiveDayEl.append(forecastContainer);
 }
 
 function getForecast(lat, lon) {
@@ -69,5 +73,3 @@ searchBtn.addEventListener("click", function(){
     var city=citySearch.value;
     getCoordinates(city);
 });
-
-//var date = dayjs(weatherData.gt_txt)format(MM/DD/YYYY)
