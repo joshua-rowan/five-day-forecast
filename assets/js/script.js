@@ -29,15 +29,15 @@ function getCoordinates(cityName){
 }
 
 function weatherToday(weatherCall) {
-  currentWeatherEl.classList.add("box");
+  currentWeatherEl.classList.add("box", "mr-4");
   var weatherCard = document.createElement("div");
-  //add class here to weatherCard for border and size
+  weatherCard.classList.add("is-align-items-center")
   var weatherBody = document.createElement("div");
-  //add weatherBody style here
   weatherCard.append(weatherBody);
 
 
   var titleEl = document.createElement("h2");
+  titleEl.classList.add("title", "is-size-3", "has-text-weight-bold")
   var iconCode = weatherCall.list[0].weather[0].icon;
   var weatherIconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
   var date = dayjs(weatherCall.list[0].dt_txt).format("MM/DD/YYYY");
