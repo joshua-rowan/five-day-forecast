@@ -199,6 +199,7 @@ citySearch.addEventListener("keydown", function(event) {
     var city = citySearch.value;
     getCoordinates(city);
     saveSearchTerm(city);
+    displaySearchHistory();
   }
 });
 
