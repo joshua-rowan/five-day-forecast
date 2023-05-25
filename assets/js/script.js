@@ -166,8 +166,29 @@ function saveSearchTerm(city) {
   console.log("Saved term:", city);
 }
 
+function displaySearchHistory() {
+  var searchStoredEl = document.getElementById("search-stored");
+  searchStoredEl.innerHTML= "";
+
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+  searchHistory.forEach(function (city) {
+    var searchButton = document.createElement("button");
+    searchButton.classList.add("button", "grey-light", "is-fullwidth", "my-2");
+    searchButton.textContent = city;
+    searchButton.addEventListener("click", function(){
+      getCoordinates(city);
+    });
+
+    searchStoredEl.appendChild(searchButton);
+  });
+}
+
 searchBtn.addEventListener("click", function(){
     var city=citySearch.value;
     getCoordinates(city);
     saveSearchTerm(city);
+    displaySearchHistory();
 });
+
+displaySearchHistory();
