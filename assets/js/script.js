@@ -49,11 +49,18 @@ function weatherToday(weatherCall) {
 function displayForecast(forecastCall) {
   console.log(forecastCall);
   var forecastContainer = document.createElement("div");
+  forecastContainer.classList.add("columns");
+
   var forecastCard1 = document.createElement("div");
   var forecastCard2 = document.createElement("div");
   var forecastCard3 = document.createElement("div");
   var forecastCard4 = document.createElement("div");
   var forecastCard5 = document.createElement("div");
+  forecastCard1.classList.add("column");
+  forecastCard2.classList.add("column");
+  forecastCard3.classList.add("column");
+  forecastCard4.classList.add("column");
+  forecastCard5.classList.add("column");
 
   var forecastHeaderEl = document.createElement("h3");
   forecastHeaderEl.textContent = "5-Day Forecast:";
