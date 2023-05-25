@@ -5,6 +5,13 @@ var citySearch = document.getElementById("city");
 var searchBtn = document.getElementById("search-btn");
 var currentWeatherEl = document.getElementById("current-weather");
 var fiveDayEl = document.getElementById("5-day-fore");
+var searchSectionEl = document.getElementById("search-section");
+var forecastSectionEl = document.getElementById("forecast-section");
+var getWeatherEl = document.getElementById("get-weather");
+
+getWeatherEl.classList.add("columns");
+searchSectionEl.classList.add("column", "is-one-quarter");
+forecastSectionEl.classList.add("column", "is-three-quarters");
 
 //API 1 call to convert city name into coordinates
 function getCoordinates(cityName){
@@ -49,7 +56,6 @@ function weatherToday(weatherCall) {
 function displayForecast(forecastCall) {
   console.log(forecastCall);
   var forecastContainer = document.createElement("div");
-  forecastContainer.classList.add("columns");
 
   var forecastCard1 = document.createElement("div");
   var forecastCard2 = document.createElement("div");
@@ -63,6 +69,7 @@ function displayForecast(forecastCall) {
   forecastCard5.classList.add("column");
 
   var forecastHeaderEl = document.createElement("h3");
+  forecastHeaderEl.classList.add("columns");
   forecastHeaderEl.textContent = "5-Day Forecast:";
 
   var day1TitleEl = document.createElement("h4");
