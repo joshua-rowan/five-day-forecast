@@ -17,7 +17,7 @@ forecastSectionEl.classList.add("column", "is-three-quarters");
 function getCoordinates(cityName){
   currentWeatherEl.innerHTML= "";
   fiveDayEl.innerHTML= "";
-    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid="+APIKey;
+    var geocodeUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid="+APIKey;
     fetch(geocodeUrl)
     .then(function (response) {
         return response.json();
@@ -149,7 +149,7 @@ function displayForecast(forecastCall) {
 }
 
 function getForecast(lat, lon) {
-  var fiveDayForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey;
+  var fiveDayForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey;
   fetch(fiveDayForecastUrl)
   .then(function (response) {
     return response.json();
