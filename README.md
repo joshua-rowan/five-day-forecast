@@ -5,7 +5,7 @@
 This app will retrieve a 5-Day Weather Forecast for cities.
 
 ## Link
-(https://joshua-rowan.github.io/five-day-forecast/)
+https://joshua-rowan.github.io/five-day-forecast/
 
 ## Screenshot
 ![joshua-rowan github io_five-day-forecast_2](https://github.com/joshua-rowan/five-day-forecast/assets/127271690/bd1122c0-c413-4a45-8fcf-cd0eb39cc2b3)
