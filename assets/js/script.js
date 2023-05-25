@@ -73,19 +73,25 @@ function displayForecast(forecastCall) {
   var date3 = dayjs(forecastCall.list[22].dt_txt).format("MM/DD/YYYY");
   var date4 = dayjs(forecastCall.list[30].dt_txt).format("MM/DD/YYYY");
   var date5 = dayjs(forecastCall.list[38].dt_txt).format("MM/DD/YYYY");
-  console.log(date1);
-  console.log(date2);
-  console.log(date3);
-  console.log(date4);
-  console.log(date5);
+
+  day1TitleEl.textContent = date1;
+  day2TitleEl.textContent = date2;
+  day3TitleEl.textContent = date3;
+  day4TitleEl.textContent = date4;
+  day5TitleEl.textContent = date5;
+
 
   //NEXT: Create and test day 1 forecast card
 
   
 
 
-
-  forecastContainer.append(forecastHeaderEl);
+  forecastCard1.append(day1TitleEl, day1ContentEl);
+  forecastCard2.append(day2TitleEl, day2ContentEl);
+  forecastCard3.append(day3TitleEl, day3ContentEl);
+  forecastCard4.append(day4TitleEl, day4ContentEl);
+  forecastCard5.append(day5TitleEl, day5ContentEl);
+  forecastContainer.append(forecastHeaderEl, forecastCard1, forecastCard2, forecastCard3, forecastCard4, forecastCard5);
   fiveDayEl.append(forecastContainer);
 }
 
