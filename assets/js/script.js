@@ -68,6 +68,19 @@ function displayForecast(forecastCall) {
   var day4ContentEl = document.createElement("p");
   var day5ContentEl = document.createElement("p");
 
+  var date1 = dayjs(forecastCall.list[6].dt_txt).format("MM/DD/YYYY");
+  var date2 = dayjs(forecastCall.list[14].dt_txt).format("MM/DD/YYYY");
+  var date3 = dayjs(forecastCall.list[22].dt_txt).format("MM/DD/YYYY");
+  var date4 = dayjs(forecastCall.list[30].dt_txt).format("MM/DD/YYYY");
+  var date5 = dayjs(forecastCall.list[38].dt_txt).format("MM/DD/YYYY");
+  console.log(date1);
+  console.log(date2);
+  console.log(date3);
+  console.log(date4);
+  console.log(date5);
+
+  //NEXT: Create and test day 1 forecast card
+
   
 
 
