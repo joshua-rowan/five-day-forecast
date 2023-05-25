@@ -30,8 +30,10 @@ function weatherToday(weatherCall) {
 
 
   var titleEl = document.createElement("h2");
+  var iconCode = weatherCall.list[0].weather[0].icon;
+  var weatherIconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
   var date = dayjs(weatherCall.list[0].dt_txt).format("MM/DD/YYYY");
-  titleEl.innerHTML = weatherCall.city.name + " (" + date + ")" + weatherCall.list[0].weather[0].icon;
+  titleEl.innerHTML = weatherCall.city.name + " (" + date + ")" + "<img src='" + weatherIconUrl + "'>";
 
   var weatherContentEl = document.createElement("p");
   weatherContentEl.innerHTML = "Temp: " + weatherCall.list[0].main.temp + " F" + "<br/>";
@@ -62,6 +64,17 @@ function displayForecast(forecastCall) {
   var day4TitleEl = document.createElement("h4");
   var day5TitleEl = document.createElement("h4");
 
+  var iconCode1 = forecastCall.list[6].weather[0].icon;
+  var forecast1IconUrl = "https://openweathermap.org/img/wn/" + iconCode1 + ".png";
+  var iconCode2 = forecastCall.list[14].weather[0].icon;
+  var forecast2IconUrl = "https://openweathermap.org/img/wn/" + iconCode2 + ".png";
+  var iconCode3 = forecastCall.list[22].weather[0].icon;
+  var forecast3IconUrl = "https://openweathermap.org/img/wn/" + iconCode3 + ".png";
+  var iconCode4 = forecastCall.list[30].weather[0].icon;
+  var forecast4IconUrl = "https://openweathermap.org/img/wn/" + iconCode4 + ".png";
+  var iconCode5 = forecastCall.list[38].weather[0].icon;
+  var forecast5IconUrl = "https://openweathermap.org/img/wn/" + iconCode5 + ".png";
+
   var day1ContentEl = document.createElement("p");
   var day2ContentEl = document.createElement("p");
   var day3ContentEl = document.createElement("p");
@@ -80,11 +93,30 @@ function displayForecast(forecastCall) {
   day4TitleEl.textContent = date4;
   day5TitleEl.textContent = date5;
 
+  day1ContentEl.innerHTML = "<img src='" + forecast1IconUrl + "'>" + "<br/>";
+  day1ContentEl.innerHTML += "Temp: " + forecastCall.list[6].main.temp + " F" + "<br/>";
+  day1ContentEl.innerHTML += "Wind: " + forecastCall.list[6].wind.speed + " mph" + "<br/>";
+  day1ContentEl.innerHTML += "Humidity: " + forecastCall.list[6].main.humidity + " %" + "<br/>";
 
-  //NEXT: Create and test day 1 forecast card
+  day2ContentEl.innerHTML = "<img src='" + forecast2IconUrl + "'>" + "<br/>";
+  day2ContentEl.innerHTML += "Temp: " + forecastCall.list[14].main.temp + " F" + "<br/>";
+  day2ContentEl.innerHTML += "Wind: " + forecastCall.list[14].wind.speed + " mph" + "<br/>";
+  day2ContentEl.innerHTML += "Humidity: " + forecastCall.list[14].main.humidity + " %" + "<br/>";
 
-  
+  day3ContentEl.innerHTML = "<img src='" + forecast3IconUrl + "'>" + "<br/>";
+  day3ContentEl.innerHTML += "Temp: " + forecastCall.list[22].main.temp + " F" + "<br/>";
+  day3ContentEl.innerHTML += "Wind: " + forecastCall.list[22].wind.speed + " mph" + "<br/>";
+  day3ContentEl.innerHTML += "Humidity: " + forecastCall.list[22].main.humidity + " %" + "<br/>";
 
+  day4ContentEl.innerHTML = "<img src='" + forecast4IconUrl + "'>" + "<br/>";
+  day4ContentEl.innerHTML += "Temp: " + forecastCall.list[30].main.temp + " F" + "<br/>";
+  day4ContentEl.innerHTML += "Wind: " + forecastCall.list[30].wind.speed + " mph" + "<br/>";
+  day4ContentEl.innerHTML += "Humidity: " + forecastCall.list[30].main.humidity + " %" + "<br/>";
+
+  day5ContentEl.innerHTML = "<img src='" + forecast5IconUrl + "'>" + "<br/>";
+  day5ContentEl.innerHTML += "Temp: " + forecastCall.list[38].main.temp + " F" + "<br/>";
+  day5ContentEl.innerHTML += "Wind: " + forecastCall.list[38].wind.speed + " mph" + "<br/>";
+  day5ContentEl.innerHTML += "Humidity: " + forecastCall.list[38].main.humidity + " %" + "<br/>";
 
   forecastCard1.append(day1TitleEl, day1ContentEl);
   forecastCard2.append(day2TitleEl, day2ContentEl);
