@@ -29,6 +29,7 @@ function getCoordinates(cityName){
 }
 
 function weatherToday(weatherCall) {
+  currentWeatherEl.classList.add("box");
   var weatherCard = document.createElement("div");
   //add class here to weatherCard for border and size
   var weatherBody = document.createElement("div");
