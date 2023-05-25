@@ -8,7 +8,8 @@ This app will retrieve a 5-Day Weather Forecast for cities.
 https://joshua-rowan.github.io/work-day-planner/
 
 ## Screenshot
-![joshua-rowan github io_five-day-forecast_1](https://github.com/joshua-rowan/five-day-forecast/assets/127271690/e1926271-d608-4dc7-9844-7a428b9a83a3)
+![joshua-rowan github io_five-day-forecast_2](https://github.com/joshua-rowan/five-day-forecast/assets/127271690/bd1122c0-c413-4a45-8fcf-cd0eb39cc2b3)
+
 
 ## Scenario
 
