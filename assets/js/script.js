@@ -158,7 +158,16 @@ function getForecast(lat, lon) {
   })
 }
 
+function saveSearchTerm(city) {
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  searchHistory.push(city);
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+  console.log("Saved term:", city);
+}
+
 searchBtn.addEventListener("click", function(){
     var city=citySearch.value;
     getCoordinates(city);
+    saveSearchTerm(city);
 });
