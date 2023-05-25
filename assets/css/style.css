@@ -1,3 +1,9 @@
-h1 {
-    
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
 }
