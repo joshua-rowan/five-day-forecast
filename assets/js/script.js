@@ -193,4 +193,13 @@ searchBtn.addEventListener("click", function(){
     displaySearchHistory();
 });
 
+citySearch.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    var city = citySearch.value;
+    getCoordinates(city);
+    saveSearchTerm(city);
+  }
+});
+
 displaySearchHistory();
