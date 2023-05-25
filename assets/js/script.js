@@ -15,6 +15,8 @@ forecastSectionEl.classList.add("column", "is-three-quarters");
 
 //API 1 call to convert city name into coordinates
 function getCoordinates(cityName){
+  currentWeatherEl.innerHTML= "";
+  fiveDayEl.innerHTML= "";
     var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid="+APIKey;
     fetch(geocodeUrl)
     .then(function (response) {
