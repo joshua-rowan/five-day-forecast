@@ -57,21 +57,23 @@ function weatherToday(weatherCall) {
 function displayForecast(forecastCall) {
   console.log(forecastCall);
   var forecastContainer = document.createElement("div");
+  forecastContainer.classList.add("forecast-container", "box", "mr-4");
 
   var forecastCard1 = document.createElement("div");
   var forecastCard2 = document.createElement("div");
   var forecastCard3 = document.createElement("div");
   var forecastCard4 = document.createElement("div");
   var forecastCard5 = document.createElement("div");
-  forecastCard1.classList.add("column");
-  forecastCard2.classList.add("column");
-  forecastCard3.classList.add("column");
-  forecastCard4.classList.add("column");
-  forecastCard5.classList.add("column");
+
+  forecastCard1.classList.add("column", "forecast-card", "card", "m-2", "has-background-info");
+  forecastCard2.classList.add("column", "forecast-card", "card", "m-2", "has-background-info");
+  forecastCard3.classList.add("column", "forecast-card", "card", "m-2", "has-background-info");
+  forecastCard4.classList.add("column", "forecast-card", "card", "m-2", "has-background-info");
+  forecastCard5.classList.add("column", "forecast-card", "card", "m-2", "has-background-info");
 
   var forecastHeaderEl = document.createElement("h3");
   forecastHeaderEl.classList.add("columns");
-  forecastHeaderEl.textContent = "5-Day Forecast:";
+  forecastHeaderEl.innerHTML = "5-Day Forecast:" + "<br/>";
 
   var day1TitleEl = document.createElement("h4");
   var day2TitleEl = document.createElement("h4");
@@ -138,7 +140,9 @@ function displayForecast(forecastCall) {
   forecastCard3.append(day3TitleEl, day3ContentEl);
   forecastCard4.append(day4TitleEl, day4ContentEl);
   forecastCard5.append(day5TitleEl, day5ContentEl);
-  forecastContainer.append(forecastHeaderEl, forecastCard1, forecastCard2, forecastCard3, forecastCard4, forecastCard5);
+
+  forecastHeaderEl.append(forecastCard1, forecastCard2, forecastCard3, forecastCard4, forecastCard5);
+  forecastContainer.append(forecastHeaderEl);
   fiveDayEl.append(forecastContainer);
 }
 
