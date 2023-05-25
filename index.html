@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>5 Day Forecast</title>
 </head>
 
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
+    <header class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Weather Dashboard</h1>
+            </div>
+        </div>
     </header>
     <div id="search-section">
         <div id="search-card">
             <label for="city">Search for a City:</label>
             <input type="text" id="city" />
-            <button id="search-btn">Search</button>
+            <button id="search-btn" class="button is-primary">Search</button>
         </div>
         <div id="search-stored"></div>
     </div>
